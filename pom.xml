@@ -7,14 +7,12 @@
 	<name>SpringMVC</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
-	 <repositories>
-     <repository>
-      <id>oracle</id>
-      <url>http://maven.jahia.org/maven2</url>
-     </repository>
-   </repositories>
-	
-	
+	<repositories>
+	  <repository>
+	   <id>oracle</id>
+	   <url>http://maven.jahia.org/maven2</url>
+	  </repository>
+	</repositories>
 	<properties>
 		<java-version>11</java-version>
 		<spring-version>5.0.7.RELEASE</spring-version>
@@ -28,15 +26,16 @@
 		<junit-version>4.7</junit-version>
 		<commons-dbcp-version>1.4</commons-dbcp-version>
 		<ojdbc7-version>12.1.0.2</ojdbc7-version>
-      	<mybatis-version>3.4.1</mybatis-version>
-      	<mybatis-spring-version>1.3.0</mybatis-spring-version>
-      	<jstl-api-version>1.2</jstl-api-version>
-      	<taglibs-standard-impl-version>1.2.5</taglibs-standard-impl-version>
-      	<javax.mail-version>1.6.2</javax.mail-version>
-      	<commons-io-version>2.6</commons-io-version>
-      	<commons-fileupload-version>1.4</commons-fileupload-version>
-      	<lombok-version>1.18.16</lombok-version>
-      	<jackson-version>2.11.2</jackson-version>
+		<mybatis-version>3.4.1</mybatis-version>
+		<mybatis-spring-version>1.3.0</mybatis-spring-version>
+		<jstl-api-version>1.2</jstl-api-version>
+		<taglibs-standard-impl-version>1.2.5</taglibs-standard-impl-version>
+		<javax.mail-version>1.6.2</javax.mail-version>
+		<commons-io-version>2.6</commons-io-version>
+		<lombok-version>1.18.16</lombok-version>
+		<commons-fileupload-version>1.4</commons-fileupload-version>
+		<jackson-version>2.11.2</jackson-version>
+		<tiles-version>3.0.8</tiles-version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -58,11 +57,11 @@
 			<version>${spring-version}</version>
 		</dependency>
 		<dependency>
-	    <groupId>org.springframework</groupId>
-	    <artifactId>spring-context-support</artifactId>
-	    <version>${spring-version}</version>
-	</dependency>
-					
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>${spring-version}</version>
+		</dependency>
+				
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -112,6 +111,7 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
+
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -143,6 +143,7 @@
 		    <artifactId>jstl-api</artifactId>
 		    <version>${jstl-api-version}</version>
 		</dependency>
+		
 		<dependency>
 		    <groupId>org.apache.taglibs</groupId>
 		    <artifactId>taglibs-standard-impl</artifactId>
@@ -178,7 +179,6 @@
 			<version>${junit-version}</version>
 			<scope>test</scope>
 		</dependency>
-		
 		<!-- Oracle 11g -->
 		<dependency>
 		   <groupId>org.springframework</groupId>
@@ -220,29 +220,47 @@
 		    <version>${lombok-version}</version>
 		    <scope>provided</scope>
 		</dependency>
-		<!-- test -->
+		<!-- Test -->
 		<dependency>
-         <groupId>junit</groupId>
-         <artifactId>junit</artifactId>
-         <version>4.7</version>
-         <scope>test</scope>
-      </dependency>    
-      
-		<!-- Jackson -->
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>  
+		<!-- Jackson -->     
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-core</artifactId>
 		    <version>${jackson-version}</version>
 		</dependency>
-
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>${jackson-version}</version>
 		</dependency>
-
-	
+		<!-- Tiles -->
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-core -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>${tiles-version}</version>
+		</dependency>
+		 
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-servlet -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-servlet</artifactId>
+			<version>${tiles-version}</version>
+		</dependency>
+		 
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>${tiles-version}</version>
+		</dependency>
 	</dependencies>
+	
     <build>
         <plugins>
             <plugin>
