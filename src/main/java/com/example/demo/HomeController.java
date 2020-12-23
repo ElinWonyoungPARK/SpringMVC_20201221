@@ -52,7 +52,7 @@ public class HomeController {
     }
     @GetMapping("/home")
     public String home() {
-    	logger.info("타일즈 테스트 진입성공");
+    	logger.info("타일즈 테스트 진입 성공" );
     	return "public";
     }
 	
