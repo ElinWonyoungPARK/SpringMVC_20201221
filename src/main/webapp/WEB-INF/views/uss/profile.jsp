@@ -511,9 +511,6 @@
 		</div>
 	</div>
 
-	<script src="${mgr}/js/vendor.js"></script>
-	<script src="${mgr}/js/app.js"></script>
-	<script src="${uss}/js/profile.js"></script>
 </body>
 
 </html>

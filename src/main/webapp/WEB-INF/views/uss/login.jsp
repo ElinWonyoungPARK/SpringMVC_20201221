@@ -144,14 +144,3 @@
             </div>
         </div>       
     </section>
-    
-
-    <script src="${cmm}/js/jquery.js"></script>
-    <script src="${cmm}/js/bootstrap.min.js"></script>
-    <script src="${cmm}/js/wow.min.js"></script>
-    <script src="${cmm}/js/coundown-timer.js"></script>
-    <script src="${cmm}/js/main.js"></script>
-    <script src="${uss}/js/login.js"></script>
-    
-</body>
-</html>
