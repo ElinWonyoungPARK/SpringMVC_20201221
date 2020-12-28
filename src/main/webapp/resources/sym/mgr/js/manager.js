@@ -1,10 +1,18 @@
 'use strict'
-$('#home').click(e => { location.href = '/'})
-        $('#facebook').click(e => {location.href = '/transfer/sym/mgr/index'})
-        $('#signupbtn').click(e => {
-            e.preventDefault()
+var manager = manager || {}
+manager = (()=>{
+	let _
+	const init =()=>{
+		_ = localStorage.getItem("ctx")
+		signup()
+	}
+	const signup =()=> {
+		$(`#signupbtn`).click(e => {
+			
+			alert(`>>`)
+			e.preventDefault()
             $.ajax({
-                url: `/managers`,
+                url: `${_}/managers`,
                 type: 'POST',
                 data: JSON.stringify({
                     email: $('#email').val(),
@@ -19,5 +27,9 @@ $('#home').click(e => { location.href = '/'})
                     console.log(`관리자등록 실패: ${e.responseText}`)
                     location.href = '/move/cmm/404'
                 }
-            })
-        })
+		})
+	})
+	}
+	return {init}
+})()
+

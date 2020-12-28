@@ -27,8 +27,8 @@ public class HomeController {
     	String ctx = request.getContextPath();
     	session.setAttribute("ctx", ctx);
     	session.setAttribute("cmm", ctx+"/resources/cmm");
-    	session.setAttribute("mgr", ctx+"/resources/mgr");
-    	session.setAttribute("tea", ctx+"/resources/tea");
+    	session.setAttribute("mgr", ctx+"/resources/sym/mgr");
+    	session.setAttribute("tea", ctx+"/resources/sym/tea");
     	session.setAttribute("uss", ctx+"/resources/uss");
     	
         logger.info("Project Initialized ... ");
@@ -36,17 +36,17 @@ public class HomeController {
         return "index";
     }
     /*
-     * uss (User Service Support)디렉토리 이동시 user 사용
-     */
+     * uss (User Service Support) 디렉토리 이동시 user 사용
+     * */
     @GetMapping("/user/{page}")
-    public String move(@PathVariable String page) {
+    public String user(@PathVariable String page) {
         logger.info("이동 파일: " + page);
-        return String.format("user:%s",page);
+        return String.format("user:%s", page);
     }
     /*
-     * sym (System Manager)디렉토리 이동시 admin 사용
-     */
-    @GetMapping("/admin/{dir}/{page}")
+     * sym (System Manager) 디렉토리 이동시 admin 사용
+     * */
+    @GetMapping("/admin/{dir}/{page}") 
     public String admin(@PathVariable String dir, 
     						@PathVariable String page) {
         logger.info("이동 디렉토리: " + dir);
@@ -54,14 +54,16 @@ public class HomeController {
         return String.format("admin:%s/%s", dir, page);
     }
     /*
-     * cop (Content Operater)디렉토리 이동시 content 사용
-     */
-    @GetMapping("/content/{dir}/{page}")
+     * cop (Content Operater) 디렉토리 이동시 content 사용
+     * */
+    @GetMapping("/content/{dir}/{page}") 
     public String content(@PathVariable String dir, 
     						@PathVariable String page) {
         logger.info("이동 디렉토리: " + dir);
         logger.info("이동 파일: " + page);
         return String.format("content:%s/%s", dir, page);
     }
-   
+
+  
+	
 }

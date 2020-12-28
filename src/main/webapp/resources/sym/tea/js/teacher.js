@@ -1,4 +1,10 @@
 'use strict'
+var teacher = teacher || {}
+teacher = (() => {
+	init = () => {}
+	return {init}
+})()
+
 const teaNum = localStorage.getItem(`searchTeacher`)
 $.getJSON(`/teachers/${teaNum}`, d => {
 	$(`#profileImage`).html(`<img src="${d.profileImage}" alt="${d.name}" class="img-fluid rounded-circle mb-2" width="128" height="128" />
@@ -73,3 +79,26 @@ $.getJSON(`/teachers/${teaNum}`, d => {
 		})
 	})						 
 }) // getJSON 의 scope
+$('#home').click(e => { location.href = '/'})
+        $('#facebook').click(e => {location.href = '/transfer/sym/tea/index'})
+        $('#signupbtn').click(e => {
+            e.preventDefault()
+            $.ajax({
+                url: `/teachers`,
+                type: 'POST',
+                data: JSON.stringify({
+                    name: $('#name').val(),
+                    password: $('#password').val(),
+                    subject: $('#subject').val()
+                }),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: d => {
+                   location.href='/transfer/sym/tea/index'
+                },
+                error: e => {
+                    console.log(`교강사등록 실패: ${e.responseText}`)
+                    location.href = '/move/cmm/404'
+                }
+            })
+        })

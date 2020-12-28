@@ -113,5 +113,6 @@
         </div>       
     </section>
     
-    <script>
-    </script>
+  <script>
+ manager.init()
+  </script>  
