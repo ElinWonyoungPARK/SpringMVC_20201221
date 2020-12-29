@@ -11,6 +11,7 @@ import java.util.Map;
 
 import com.example.demo.sym.service.ManagerMapper;
 import com.example.demo.sym.service.ManagerService;
+import com.example.demo.cmm.enm.Messenger;
 import com.example.demo.sym.service.Manager;
 
 import org.slf4j.Logger;
@@ -21,13 +22,11 @@ import org.slf4j.LoggerFactory;
 public class ManagerController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired ManagerService managerService;
-    @Autowired ManagerMapper managerMapper;
     
     @PostMapping("")
-    public Map<?, ?> register(@RequestBody Manager manager) {
-        var map = new HashMap<>();
-        logger.info("등록하려는 관리자 정보: "+manager.toString());
-        map.put("message", (managerMapper.insert(manager) == 1) ? "SUCCESS" : "FAILURE");
-        return map;
+    public Messenger register(@RequestBody Manager manager) {
+        return (managerService.register(manager) == 1) 
+        		? Messenger.SUCCESS
+        		: Messenger.FAILURE;
     }
 }
