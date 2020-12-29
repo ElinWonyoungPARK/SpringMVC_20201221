@@ -1,10 +1,19 @@
 package com.example.demo.sym.service;
 
-import com.example.demo.sym.service.model.Manager;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-@Component
-public interface ManagerService {
-	public int register(Manager manager);
+import com.example.demo.sym.service.Manager;
+
+@Service
+public class ManagerService{
+    @Autowired ManagerMapper managerMapper;
+    
+    
+    public int register(Manager manager) {
+    	int a = managerMapper.insert(manager);
+        return a;
+    }
+    
 }

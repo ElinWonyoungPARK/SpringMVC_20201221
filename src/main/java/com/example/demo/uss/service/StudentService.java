@@ -2,22 +2,16 @@ package com.example.demo.uss.service;
 
 import java.util.List;
 
-import com.example.demo.uss.service.model.Student;
+import com.example.demo.uss.service.StudentMapper;
+import com.example.demo.uss.service.StudentService;
+import com.example.demo.uss.service.Student;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentService{
+
+    }
 
 
-import org.springframework.stereotype.Component;
-@Component
-public interface StudentService {
-
-	public int register(Student student);
-
-	public Student login(Student student);
-
-	public Student detail(String userid);
-
-	public List<?> list();
-
-	public int update(Student student);
-
-	public int delete(Student student);   
-}
