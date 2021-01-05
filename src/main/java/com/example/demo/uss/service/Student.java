@@ -1,10 +1,12 @@
 package com.example.demo.uss.service;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
+import lombok.NoArgsConstructor;
 import lombok.Data;
 
-@Component @Data
+@Component @Data @Lazy @NoArgsConstructor
 public class Student{
     private String stuNum, userid, password, name, ssn, regDate, subject, profileImage;
 }

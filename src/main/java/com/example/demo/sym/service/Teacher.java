@@ -1,10 +1,14 @@
 package com.example.demo.sym.service;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
-import lombok.Data;
+import com.example.demo.uss.service.Student;
 
-@Component @Data
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Component @Data @Lazy @NoArgsConstructor
 public class Teacher {
     private String teaNum, name, email, password, subject, profileImage;
 }
