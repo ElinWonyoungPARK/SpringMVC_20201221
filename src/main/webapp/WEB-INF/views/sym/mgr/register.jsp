@@ -112,7 +112,7 @@
             </div>
         </div>       
     </section>
-    
+ 
   <script>
- manager.init()
+  $('#signupbtn').click(function(){ mgr.register(`${ctx}`)})
   </script>  

@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+
 /*
- 리스트 형식의 추상화: Generic
- 커스텀 List<T> 를 제작하여 사용함
- p.82 참조
- 메소드 목록: https://www.javatpoint.com/java-arraylist
- */
+리스트 형식의 추상화: Generic
+커스텀 List<T> 를 제작하여 사용함
+p.82 참조
+메소드 목록 : https://www.javatpoint.com/java-arraylist
+ * */
 @Component("ls") @Lazy
 public class Inventory<T> {
 	private ArrayList<T> inventory;
@@ -21,4 +22,3 @@ public class Inventory<T> {
 	public void clear() {inventory.clear();}
 	public int size() {return inventory.size();}
 }
-

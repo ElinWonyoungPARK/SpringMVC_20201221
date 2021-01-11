@@ -29,7 +29,7 @@ public class HomeController {
     	session.setAttribute("cmm", ctx+"/resources/cmm");
     	session.setAttribute("mgr", ctx+"/resources/sym/mgr");
     	session.setAttribute("tea", ctx+"/resources/sym/tea");
-    	session.setAttribute("uss", ctx+"/resources/uss");
+    	session.setAttribute("stu", ctx+"/resources/uss");
     	
         logger.info("Project Initialized ... ");
         
@@ -52,6 +52,14 @@ public class HomeController {
         logger.info("이동 디렉토리: " + dir);
         logger.info("이동 파일: " + page);
         return String.format("admin:%s/%s", dir, page);
+    }
+    /*
+     * sym (System Manager) 디렉토리 이동시 admin 사용
+     * */
+    @GetMapping("/mgr/{page}") 
+    public String manager(@PathVariable String page) {
+        logger.info("이동 파일: " + page);
+        return String.format("mgr:%s", page);
     }
     /*
      * cop (Content Operater) 디렉토리 이동시 content 사용
